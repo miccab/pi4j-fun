@@ -1,2 +1,2 @@
 
-java -cp code.jar miccab.pi4jfun.Runner
+sudo env PATH=$PATH java -jar code.jar

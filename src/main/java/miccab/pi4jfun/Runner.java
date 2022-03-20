@@ -1,12 +1,37 @@
 package miccab.pi4jfun;
 
+import com.pi4j.io.gpio.digital.DigitalOutput;
+import com.pi4j.io.gpio.digital.DigitalState;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Runner {
     private static final Logger LOG = LoggerFactory.getLogger(Runner.class);
+    private static final Integer PIN_LED = 21;
 
     public static void main(String[] args) {
-        LOG.info("Hello");
+        try (Pi4jManager pi4jManager = new Pi4jManager()) {
+            pi4jManager.printInfo();
+
+            var ledConfig = DigitalOutput.newConfigBuilder(pi4jManager.pi4j())
+                    .id("led")
+                    .name("LED Flasher")
+                    .address(PIN_LED)
+                    .shutdown(DigitalState.LOW)
+                    .initial(DigitalState.LOW)
+                    .provider("pigpio-digital-output");
+            var led = pi4jManager.pi4j().create(ledConfig);
+
+
+            led.high();
+            Thread.sleep(1_000);
+            led.low();
+            Thread.sleep(1_000);
+            led.high();
+            Thread.sleep(1_000);
+
+        } catch (Exception e) {
+            LOG.error("Unexpected error", e);
+        }
     }
 }
