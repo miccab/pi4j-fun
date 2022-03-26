@@ -19,7 +19,8 @@ use W1 interface (read file: cat /sys/bus/w1/devices/28-0000089a7301/w1_slave)
 # LCD
 
 https://www.youtube.com/watch?v=aEnS0-Jy2vE
-
+https://github.com/Pi4J/pi4j-v2/discussions/94
+https://github.com/Pi4J/pi4j-example-crowpi/blob/main/src/main/java/com/pi4j/crowpi/applications/LcdDisplayApp.java
 
 
 
