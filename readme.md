@@ -11,3 +11,15 @@ https://github.com/Pi4J/pi4j-v2
 https://groups.google.com/g/pi4j/c/t69P7H3sr7Q
 
 
+# Thermometer
+
+https://www.youtube.com/watch?v=aEnS0-Jy2vE
+use W1 interface (read file: cat /sys/bus/w1/devices/28-0000089a7301/w1_slave)
+
+# LCD
+
+https://www.youtube.com/watch?v=aEnS0-Jy2vE
+
+
+
+

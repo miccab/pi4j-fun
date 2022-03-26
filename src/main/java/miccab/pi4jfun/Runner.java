@@ -7,9 +7,11 @@ import org.slf4j.LoggerFactory;
 
 public class Runner {
     private static final Logger LOG = LoggerFactory.getLogger(Runner.class);
-    private static final Integer PIN_LED = 21;
+    private static final Integer PIN_LED = 16;
 
     public static void main(String[] args) {
+        long lightTime = Long.parseLong(args[0]);
+
         try (Pi4jManager pi4jManager = new Pi4jManager()) {
             pi4jManager.printInfo();
 
@@ -24,7 +26,7 @@ public class Runner {
 
 
             led.high();
-            Thread.sleep(1_000);
+            Thread.sleep(lightTime);
             led.low();
             Thread.sleep(1_000);
             led.high();
