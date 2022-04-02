@@ -1,7 +1,8 @@
-package miccab.pi4jfun;
+package miccab.pi4jfun.led;
 
 import com.pi4j.io.gpio.digital.DigitalOutput;
 import com.pi4j.io.gpio.digital.DigitalState;
+import miccab.pi4jfun.Pi4jManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -10,7 +11,7 @@ public class Runner {
     private static final Integer PIN_LED = 16;
 
     public static void main(String[] args) {
-        long lightTime = Long.parseLong(args[0]);
+        long  czasSwiecenia= Long.parseLong(args[0]);
 
         try (Pi4jManager pi4jManager = new Pi4jManager()) {
             pi4jManager.printInfo();
@@ -26,7 +27,7 @@ public class Runner {
 
 
             led.high();
-            Thread.sleep(lightTime);
+            Thread.sleep(czasSwiecenia);
             led.low();
             Thread.sleep(1_000);
             led.high();

@@ -42,6 +42,11 @@
             <artifactId>slf4j-simple</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.pi4j.crowpi</groupId>
+            <artifactId>crowpi-examples</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -52,7 +57,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>miccab.pi4jfun.Runner</mainClass>
+                            <mainClass>miccab.pi4jfun.led.Runner</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
